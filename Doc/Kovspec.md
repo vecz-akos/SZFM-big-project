@@ -6,6 +6,7 @@ Az alkalmazás célja, hogy bárki könnyedén értékelhessen filmeket, zenéke
 
 ## 2. Jelenlegi helyzet
 
+A mai világban az emberek életében egyre nagyobb szerepet játszanak a sorozatok, filmek, zenék, ami miatt egyre több is készül belőlük. Ennek pedig az lett a következménye, hogy rengeteg időt pocsékolnak el az emberek azzal, hogy keresgélik a nekik megfelelő tartalmakat, mivel nincs egy olyan lehetőség, ami képes lenne nem csak egy fajta műfajban ajánlást tenni, hanem akár egyszerre többen is, mint például a filmekben és zenékben. Erre nyújtana megoldást az általunk készítendő szoftver, amely képes lesz egyszerre ajánlásokat tenni filmekben, zenékben, sorozatokban csupán az alapján, hogy hogyan értékelünk mondjuk egy adott zenét.
 
 ## 3. Vágyálom rendszer
 
