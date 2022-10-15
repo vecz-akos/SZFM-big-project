@@ -6,6 +6,7 @@ Egy olyan rendszert fejlesztünk, ami segítségével az emberek értékelhessen
 
 ## 2. Jelenlegi helyzet
 
+A megrendelő szeretne egy olyan rendszert, ami segítségével a felhasználó nem csak értékeléseket tudna adni filmekre, zenékre, sorozatokra, stb., hanem az értékelések alapján az adott felhasználónak a legszemélyebbre szabott ajánlásokat tudja adni a program a különböző témákból és műfajokból. Ezzel a kibővített funkcióval is előnyhöz jutni a piacon a versenytársakkal szemben. Egy új rendszer előállítását rendelte meg, amely interneten keresztül modern megoldásokat használva működik. A rendszer egy kiváló lehetőséget ad azok számára akik új, például filmeket akarnak megismerni kedvenc témaköreikben. A mai világ már megköveteli, hogy mindez hálózaton is elérhető legyen, ennek megfelelően weboldalon a megrendelő rendelkezésére kell bocsátani. Eddig a megrendelő nem használt ehhez hasonló programokat, de számos kollégájától hallott róluk és észrevette a benne lévő piaci rést. Ezért elkezdett keresgélni és összeállítani egy olyan programtervet, amelyben kipótolja ezen rendszerek hiányosságait. Egy olyan programra lenne szükség, amely enged értékelni műfajokat, de ezzel együtt különböző ajánlásokat ad a felhasználónak értékelések alapján.
 
 ## 3. Vágyálom rendszer
 
