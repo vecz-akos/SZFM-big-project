@@ -10,6 +10,7 @@ A megrendelő szeretne egy olyan rendszert, ami segítségével a felhasználó 
 
 ## 3. Vágyálom rendszer
 
+A projekt célja egy olyan webalkalmazás fejlesztése, amely segítségével az emberek könnyedén értékelhetnek filmeket, zenéket, sorozatokat, könyveket, stb. A szoftver online, böngészőn keresztül érhető el. Regisztrációt követően a felhasználó kiválaszthatja kedvenc műfajait, amiben már el is kezdhet keresgélni és értékelni az adott tartalmat. A felhasználó értékelései alapján kaphat különböző ajánlásokat. A rendszernek van egy admin felülete is, ahol az admin egy bejelentkezés után fel tud tölteni az egyes műfajokba értékelhető tartalmakat.
 
 ## 4. Jelenlegi üzleti folyamatok
 
