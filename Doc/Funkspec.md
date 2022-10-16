@@ -14,6 +14,11 @@ A projekt célja egy olyan webalkalmazás fejlesztése, amely segítségével az
 
 ## 4. Jelenlegi üzleti folyamatok
 
+Ha valaki ajánlást szeretne valamiről (amilyen területen nem jártas), az egy hosszú és végeláthatatlan utánajárást von maga után. Például meg kell kérdeznie ismerőseit, vagy utánanézni az interneten, akár fórumokon, akár véleményező oldalakon. Mindezt pedig jó lenne szisztematikusan is csinálni, ami szinte biztos nem történik meg. Így végül nem a legjobb ajánlást kapja az adott személy.
+
+Erre gondolotban megpróbálhatnánk egy szolgáltatást biztosítani. Az adatok gyűjtését sokféle módon lehetne kivitelezni. Például lehetne szerkeszteni online kérdőíveket. Ezeket nehéz összegyűjteni egy táblázatba, adatbázisba. Következő lépésként egy másik felületen elemezni, végül pedig visszaküldeni a válaszadóknak az eredményeket, például emailben.
+
+Szóval a jelenlegi munkafolyamattal az a probléma, hogy kölünböző eszközöket, felületeket kell használni, amelyek nincsenek összehangolva. Továbbá sok benne a manuális, emberi feladat, annak ellenére, hogy könnyű lenne automatizálni a folyamatokat.
 
 ## 5. Igényelt üzleti folyamatok
 
