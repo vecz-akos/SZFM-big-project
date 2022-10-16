@@ -1,4 +1,4 @@
-# Mértékegység átváltó követelmény specifikáció
+# Ajánlórendszer funkcionális specifikáció
 
 ## 1. Áttekintés
 
@@ -18,8 +18,11 @@ A projekt célja egy olyan webalkalmazás fejlesztése, amely segítségével az
 ## 5. Igényelt üzleti folyamatok
 
 
-## 6. A rendszerre vonatkozó szabályok
+## 6. Használati esetek
 
+A rendszer használatához szükséges egy admin jogosultságokkal rendelkező felhasználó, aki fel tudja tölteni tartalommal az oldalt. Az adminok tudnak hozzáadni új témákat. A felületünk rengeteg témának teremti meg a lehetőséget. Ezek lehetnek filmek, ételek, műszaki cikkek stb. A témákon belül mintákat tudnak hozzáadni, szerkeszteni, törölni. A későbbiekben ezeket a mintákat fogják értékelni a felhasználók. Az admin összegző statisztikákat láthat a felhasználók által végzett értékelésekről.
+
+Az átlagos felhasználók megtekinthetik a témákat. A témákon belül mintákat tudnak értékelni egy skálán. Viszont csak akkor értékelik, amennyiben ismerik is az adott mintát, különben kihagyják. Ők nem tudnak tartalmat feltölteni. Hozzáférnek a saját értékeléseikhez, illetve láthatják az ajánlásaikat.
 
 ## 7. Követelménylista
 
