@@ -22,13 +22,16 @@ A projekt célja egy olyan webalkalmazás fejlesztése, amely segítségével az
 | Felület | K04 | Értékelés | 1.0 | Minták értékelése |
 | Felület | K05 | Ajánlás | 1.0 | Ajánlás készítés, felhasználói ízlésprofil alkotás |
 
-## 5. Jelenlegi üzleti folyamatok
+## 5. Rendszerre vonatkozó törvények, szabványok, ajánlások
+
+ 1. A felhasználók által megadott személyes adatokat a GDPR által meghatározott szabályok szerint tároljuk, dolgozzuk fel.
+ 2. A webes felület HTML5 és CSS3 szabványoknak megfelelő lesz.
+ 3. A mintákhoz társítható rövid leírások, képek nem állhatnak szerzői jogi oltalom alatt.
+
+## 6. Jelenlegi üzleti folyamatok
 
 
-## 6. Igényelt üzleti folyamatok
-
-
-## 7. Használati esetek
+## 7. Igényelt üzleti folyamatok
 
 
 ## 8. Fogalomtár
