@@ -38,6 +38,7 @@ Szóval a jelenlegi munkafolyamattal az a probléma, hogy kölünböző eszköz�
 
 ## 7. Igényelt üzleti folyamatok
 
+A megrendelő egy olyan platformfügegtlen webalkalmazást szeretne, amelyen a fő oldalon lehet bejelentkezni (felhasználónév, jelszó), de ezt megelőzően regisztrálnia kell saját e-mail címével. Bejelentkezést követően a felhasználó lehetőséget kap különbőző funkciók használatához. Az oldalhoz tartoznak admin és user jogosultsággal rendelkező felhasználók. Az admin felhasználók egy külön felülettel rendelkeznek, ahol különbőző értékelhető témakat képesek feltölteni. A user jogusultsággal rendelkező emberek, pedig értekelni tudnak különböző műfajokból kiválasztott tartalmakat (zene, film, sorozat, stb...). Miután a felhasználó értékelt pár tartalmat, a webalkalmazás ajánlást tesz az értékelés alapján legérdekeltebb témákban, a felhasználóknak külön-külön személyre szabva.
 
 ## 8. Fogalomtár
 
