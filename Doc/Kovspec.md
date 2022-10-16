@@ -1,4 +1,4 @@
-# Mértékegység átváltó funkcionális specifikáció
+# Ajánlórendszer követelmény specifikáció
 
 ## 1. Áttekintés
 
@@ -14,6 +14,13 @@ A projekt célja egy olyan webalkalmazás fejlesztése, amely segítségével az
 
 ## 4. Követelménylista
 
+| Modul | ID  | Név | Verzió | Kifejtés |
+|---|---|---|---|---|
+| Felület | K01 | Admin  szerkesztés | 1.0| Adminfelületen felvihető mintacsoportok, minták |
+| Jogosultság | K02 | Regisztráció | 1.0 | Felhasználók regisztrálása |
+| Jogosultság | K03 | Belépés-kifelentkezés | 1.0 | Felhasználók és admin beléptetése-kijelentkeztetése |
+| Felület | K04 | Értékelés | 1.0 | Minták értékelése |
+| Felület | K05 | Ajánlás | 1.0 | Ajánlás készítés, felhasználói ízlésprofil alkotás |
 
 ## 5. Jelenlegi üzleti folyamatok
 
