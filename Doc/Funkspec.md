@@ -59,3 +59,9 @@ Admin:
 
 User:
 >A user(magyarul: felhasználó) az a személy (végfelhasználó) vagy szoftverágens, aki egy számítógépes vagy számítógép-hálózati szolgáltatás használója.
+
+Django:
+>A Django egy nyílt forráskódú, magas szintű Python programozási nyelven írt keretrendszer, amely segítségével gyorsan tudunk weboldalakat készíteni és folyamatos fejlesztés alatt áll.
+
+Algoritmus:
+>Algoritmuson vagy eljáráson olyan megengedett lépésekből álló módszert, utasítás(sorozatot), részletes útmutatást, receptet értünk, amely valamely felmerült probléma megoldására alkalmas.
