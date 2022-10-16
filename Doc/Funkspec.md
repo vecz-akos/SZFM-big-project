@@ -26,6 +26,13 @@ Az átlagos felhasználók megtekinthetik a témákat. A témákon belül mintá
 
 ## 7. Követelménylista
 
+| Modul | ID  | Név | Verzió | Kifejtés |
+|---|---|---|---|---|
+| Felület | K01 | Admin  szerkesztés | 1.0| Adminfelületen felvihető mintacsoportok, minták |
+| Jogosultság | K02 | Regisztráció | 1.0 | Felhasználók regisztrálása |
+| Jogosultság | K03 | Belépés-kifelentkezés | 1.0 | Felhasználók és admin beléptetése-kijelentkeztetése |
+| Felület | K04 | Értékelés | 1.0 | Minták értékelése |
+| Felület | K05 | Ajánlás | 1.0 | Ajánlás készítés, felhasználói ízlésprofil alkotás |
 
 ## 8. Fogalomtár
 
