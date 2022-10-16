@@ -41,3 +41,20 @@ Az átlagos felhasználók megtekinthetik a témákat. A témákon belül mintá
 
 ## 8. Fogalomtár
 
+GDPR:
+>A GDPR a General Data Protection Regulation kezdőbetűiből képzett mozaikszó, magyarul általános adatvédelmi rendelet.
+
+Platformfüggetlen:
+>Egy alkalmazás nem korlátozódik le egy eszközre, hanem több különböző eszközről is használható.
+
+HTML:
+>A HTML (angolul: HyperText Markup Language, „hiperszöveges jelölőnyelv”) egy leíró nyelv, melyet weboldalak készítéséhez fejlesztettek ki, és mára már internetes szabvánnyá vált a W3C (World Wide Web Consortium) támogatásával.
+
+CSS:
+>A CSS (Cascading Style Sheets, magyarul: „lépcsőzetes stíluslapok”) a számítástechnikában egy stílusleíró nyelv, mely a HTML vagy XHTML típusú strukturált dokumentumok megjelenését írja le.
+
+Admin:
+>Egy adott rendszer felügyeletét ellátó, a felett általában teljes kontrollal rendelkező felhasználó.
+
+User:
+>A user(magyarul: felhasználó) az a személy (végfelhasználó) vagy szoftverágens, aki egy számítógépes vagy számítógép-hálózati szolgáltatás használója.
