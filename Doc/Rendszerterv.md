@@ -37,6 +37,7 @@ Adatbázis: Oravecz Ákos
 
 ## 8. Adatbázis terv
 
+![Adatbázis terv](/Doc/imgs/adatbazis.png)
 
 ## 9. Implementációs terv
 
