@@ -5,6 +5,20 @@
 
 ## 2. Projektterv
 
+**Projekt szerepkörök és felelőségek**:
+
+Backend: Bródi Máté Gábor
+
+Frontend: Kerekes Konrád Péter
+
+Adatbázis: Oravecz Ákos
+
+**Ütemterv**:
+
+ * Fejlesztés: 2022. 10. 24. - 11. 13. és 11. 28. - 12. 04.
+ * Tesztelés: 2022. 10. 14. - 12. 04.
+ * Határidő: 2022. 12. 05.
+
 
 ## 3. Üzleti folyamatok modellje
 
