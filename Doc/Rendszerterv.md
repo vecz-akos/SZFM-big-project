@@ -31,11 +31,34 @@ Adatbázis: Oravecz Ákos
 
 ## 6. Fizikai környezet
 
+Az alkalmazás web platformra, hordozható eszközökre (okostelefonok, táblagépek) készül.
+- Nincsenek megvásárolt komponensek.
+- Kliens által biztosított eszközök:
+    - Webszerver
+    - Okostelefon
+    - Számítógép
+    - Táblagép
+- Fejlesztői eszközök:
+    - github
+    - Visual Studio Code
+    - Notepad++
+- Tesztelési környezet:
+    - Chrome
+    - Firefox
+    - Opera
+    - Safari
+    - Microsoft Edge
 
 ## 7. Architekturális terv
 
 
 ## 8. Adatbázis terv
+
+Az adatbázis 4 táblából fog állni, ezek össze lesznek kapcsolva. Egy felhasználóhoz (`User`) több értékelés (`Rates`) tartozik. Egy-egy értékelés egy mintára (`Sample`) hivatkozik. Több minta tartozhat egy kategóriába (`Category`).
+
+A minden felhasználó kap egy hozzáférési szintet, ami megadja, hogy rendelkezik-e az adott felhasználó például admin jogosultságokkal.
+
+Egy mintába, illetve kategóriba opcionálisan megadhatunk leírást és kép elérési útját. Egy mintához megadhatunk tageket is sztringként, ami vesszővel elválasztott felsorolás. Ez a tervezési megközelítés gyorsabb elérhetőséget biztosít.
 
 ![Adatbázis terv](/Doc/imgs/adatbazis.png)
 
