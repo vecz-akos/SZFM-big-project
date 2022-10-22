@@ -41,6 +41,11 @@ Adatbázis: Oravecz Ákos
 
 ## 9. Implementációs terv
 
+A backend `Python`-ban lesz megírva. Webes keretrendszerként `Django`-t fogunk használni. Ezzel könnyen és gyorsan tudjuk a fejlesztést végezni. Eredményként pedig egy gyors, biztonságos és könnyen skálázható rendszert fogunk kapni. Az adatok feldolgozását a `Pandas` adatelemző programkönyvtárral végezzük. Ez könnyű használhatóságának köszönhetően egy népszerű eszköz és így mi is ezt választottuk. Az adatbázisként `SQLite`-ot fogjuk használni, ami integrálva van a `Django`-ba. Az adatbázisból olvasás `REST API`-val történik, ez könnyű hozzáférhetőséget biztosít az adatokhoz, illetve haladó felhasználók könnyen tudnak lekéréseket végezni.
+
+A frontend `HTML5`, `CSS3` és `JavaScript` technológiákat fogja használni. Természetesen a `HTML5` szabványú fájl fog felelni a tartalomért. A megjelenésért a `CSS3` szabványú stíluslapok lesznek felelősek. Figyelmet fordítunk a színvakok és látássérültek nehézségeire, így a felületi elemeken különböző árnyalatú, világosságú színeket fogunk használni, amelyek könnyen elkülöníthetőek lesznek egymástól. A kliensoldalon futó `JavaScript` kód le fogja venni a terhet a szerverről és csupán minimálisan fogja használni a kliens számítógép erőforrásait.
+
+Az összes különbőző technológia külön fájlban lesz, amelyeket egymáshoz fogunk csatolni. Ez a megközelítés átláthatóbb és gyorsabban fejleszthető projektet eredményez, ami majd segíti a jövőbeli karbantartást is.
 
 ## 10. Tesztterv
 
