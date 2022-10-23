@@ -115,7 +115,7 @@ Az alkalmazás web platformra, hordozható eszközökre (okostelefonok, táblag�
 
 A rendszert egy HTML, CSS, JavaScript és Python fájl alkotja. A frontendért felelős fájlok a HTML, CSS és JavaScript. A Python kód a backendért lesz felelős és egy Django keretrendszert használunk, amelyhez a bele integrált SQLite fog adatbázisként szolgálni.
 
-![Architekturális terv](/Doc/imgs/architekturalisterv.png)
+![Architekturális terv](/Doc/imgs/architekturalisterv.PNG)
 
 ## 8. Adatbázis terv
 
