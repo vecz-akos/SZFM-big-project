@@ -134,6 +134,27 @@ Az összes különbőző technológia külön fájlban lesz, amelyeket egymásho
 
 ## 10. Tesztterv
 
+### Unit teszt:
+
+- A fejlesztési idő egyik fontosabb részét képzi a unit tesztek írása, mivel fontos, hogy a függvények megfelelően működjenek az értékelést követően az ajánlások legpontosabb kiválasztásához.
+
+### Alfa teszt:
+
+- A tesztet a fejlesztők végzik.
+- A teszt elsődleges célja, hogy az eddig meglévő funkciók megfelelően működnek az összes böngészőben, illetve az androidos és IOS rendszerrel rendelkező eszközökön. Ez a teszt akkor sikeres, ha az összes böngészöben és eszközön megfelelően működnek, mind az admin és user felhasználók jogosultágai, illetve a témakörök értékelése után az ajánlások megfelelnek az elképzelésnek és a lehető legpontosabb ajánlást kapjuk az összes esetben, valamint ezt követően képesek vagyunk a felhasználókból való kijelentkezésre.
+
+### Beta teszt:
+
+- A tesztet a user felhasználók végzik.
+- Tesztelendő böngészők:
+    - Chrome
+    - Firefox
+    - Safari
+    - Opera
+    - Microsoft Edge
+
+A tesztelés alatt a tesztelő felhasználók visszajelzéseket küldhetnek a
+fejlesztőknek, probléma/hiba felmerülése esetén. Ha hiba lép fel, a fejlesztők kijavítják a lehető leghamarabb.
 
 ## 11. Telepítési terv
 
