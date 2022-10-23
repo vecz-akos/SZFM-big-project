@@ -2,6 +2,7 @@
 
 ## 1. A rendszer célja
 
+A rendszer cálja, hogy a  felhasználók, könnyedén egy online felületen keresztül tudjanak filmeket, sorozatokat vagy zenéket értékelni 1-től 5-ig, és akár kis megjegyzéseket is írhatnak az adott tartalomhoz. A felhasználók értékeléseik alapján az adott témakörben és műfajban kapnak különböző ajánlásokat, melyekkel még több filmet, sorozatot vagy zenét fedezhetnek fel. Fontos, hogy a felhasználó könnyen el tudjon igazodni a felületen ezért a rendszer kapni fog egy jól átlátható letisztult mégis modern felhasználói felületet. Az admin szerepkörrel rendelkező felhasználó tölthet fel különböző filmeket, zenéket vagy sorozatokat az adatbázisba, amiket értékelhetnek a user szerepkörrel rendelkező felhasználók. A rendszer webes felületen keresztül lesz elérhető. A rendszer az adatokat egy Web Service segítségével kapja az adatbázisból. Mivel csak webes felületen szeretnénk elérhetővé tenni az alkalmazást, ezért nem célunk, hogy például telefonos eszközökön is fusson.
 
 ## 2. Projektterv
 
