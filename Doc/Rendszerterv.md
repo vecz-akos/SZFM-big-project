@@ -23,6 +23,7 @@ Adatbázis: Oravecz Ákos
 
 ## 3. Üzleti folyamatok modellje
 
+![Üzleti folyamatok modellje](/Doc/imgs/uzfoly_modell.png)
 
 ## 4. Követelmények
 
