@@ -164,3 +164,4 @@ A szoftver webes felületéhez csak egy ajánlott böngészőt kell telepíteni 
 
 ## 12. Karbantartási terv
 
+A karbantartás a rendszerben lévő műfajok és témák állandó változása miatt elengedhetetlen, mivel az alkalmazás naprakészsége fonotos tényező a felhasználók elégedettségét illetően. A műfajok időbeni változásai/bővítései folyamatos felügyeletet igényel a rendszer működéséhez. A karbantartást lehet előre betervezett időközönként is végezni, de lehet a műfajok és témak újdonságainak elérhetővé válásához is igazitani. A két esetből a megfelelőbb eset az előre megbeszélt időpont, mivel így a felhasználók számíthatnak arra, hogy milyen időben lesznek elérhetőek az új információk.
