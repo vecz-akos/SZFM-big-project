@@ -27,6 +27,33 @@ Adatbázis: Oravecz Ákos
 
 ## 4. Követelmények
 
+**Funkcionális követelmények**:
+
+### [K01] Regisztráció
+    A felhasznlóknak regisztrálniuk kell magukat a rendszerbe, hogy hozzáférhessenek az oldal funkcióihoz.
+### [K02] Dizájn
+    A dizájn a HTML5 és CSS3 segítségével lesz megvalósítva.
+### [K03] Rendszerfüggetlenség
+    A böngészőben való futtatás biztosítja a rendszerfüggetlenséget.
+### [K04] Admin jogosúlság
+    A weblapon megfelelően kell elkülöníteni az admin és user felhasználók jogosultságait, hogy csak a megfelelő joggal rendelkező felhasználó(admin) férhessen hozzá az adatokhoz.
+### [K05] Gyors működés
+    A böngészőben lévő elérhetőség miatt az alkalmazás gyors működésre képes.
+### [K06] Könnyű kezelhetőség
+    Az ajánló rendszer egy egyszerű és átlátható weblapként lesz megjelenítve, így az egyszerű felhasználók is könnyen megérthetik majd a működését.
+### [K07] Gyors fejleszthetőség
+    A Django webes keretrendszer lesz felelős a gyors fejleszthetőségért.
+### [K08] Egyértelmű értékelés
+    A felhasználóknak egyszerű és átlatható módón kell megjeleníteni az értékelési és választási opciókat, hogy ebből fakadóan ne legyen téves ajánlás. 
+### [K09] Pontos ajánlás
+    Az algoritmus a felhasználó kritériumai alapján pontosan kell, hogy kiválassza a megfelelő műfajt és témakört.
+### [K10] Adatok tárolása
+    Minden felhasználónak külön személyreszabott értékelése és ajánlása lesz, amelyket megfelelően kell tárolni, hogy ne befolyásolja az egyik felhasználó érdeklődési köre a másikét.
+
+
+**Törvényi előírások, szabványok**:
+
+A [GDPR](https://hu.wikipedia.org/wiki/%C3%81ltal%C3%A1nos_adatv%C3%A9delmi_rendelet)-nek való megfelelés.
 
 ## 5. Funkcionális terv
 
