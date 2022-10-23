@@ -30,6 +30,39 @@ Adatbázis: Oravecz Ákos
 
 ## 5. Funkcionális terv
 
+**Rendszerszereplők**:
+- Admin
+- Felhasználó (User)
+
+**Rendszerhasználati esetek és lefutásaik**:
+- ADMIN:
+
+    - Beléphet bármilyen szereplőként, teljes hozzáférése van a rendszerhez
+    - A felhasználói adatokat látja, módosíthatja
+    - Felhasználók hozzáadására, törlésére van lehetősége
+    - Új filmek, sorozatok és zenék feltöltése, módosítása és törlése
+
+- FELHASZNÁLÓ (USER):
+
+    - Képes értékelni különböző filmeket, sorozatokat és zenéket
+    - Módosíthatja saját adatait
+    - Láthatja saját értékeléseit és az értékelései alapján kapott ajánlásokat
+
+**Menü-hierarchiák**:
+- BEJELENTKEZÉS
+
+    - Regisztráció
+    - Bejelentkezés
+    - Help
+
+- MAIN MENÜ
+
+    - Műfaj kiválasztása (Film, Sorozat, Zene)
+    - Témakör kiválasztása
+    - Saját adatok
+    - Értékelések
+    - Ajánlások
+    - Kijelentkezés
 
 ## 6. Fizikai környezet
 
