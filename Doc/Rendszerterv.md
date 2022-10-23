@@ -110,6 +110,9 @@ Az összes különbőző technológia külön fájlban lesz, amelyeket egymásho
 
 ## 11. Telepítési terv
 
+**Webes alkalmazás**:
+
+A szoftver webes felületéhez csak egy ajánlott böngészőt kell telepíteni (Google Chrome, Firefox, Opera, Edge, Safari), külön szoftver letöltését nem igényli. A webszerverre közvetlenül az internetről kapcsolódnak rá a kliensek.
 
 ## 12. Karbantartási terv
 
