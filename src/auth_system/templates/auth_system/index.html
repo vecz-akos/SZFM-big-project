@@ -4,11 +4,31 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
     <title>Home Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
-    <h1>Hello</h1>
-    <button><a href="{% url 'logout' %}">Logout</a></button>
+    <div class="home-page">
+        <div class="side-menu">
+            <h3>Account Name</h3>
+            <div class="menu">
+                <p>MENU</p>
+                <button>Home</button>
+                <button>Trending</button>
+                <button>Profile</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <h1>Discover</h1>
+        </div>
+
+        <div class="search-side">
+            <p>Search</p>
+        </div>
+        
+        <button><a href="{% url 'logout' %}">Logout</a></button>
+    </div>
 </body>
 </html>
