@@ -1,0 +1,38 @@
+body {
+    background: black;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input {
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    border: 3px solid aquamarine;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background: aquamarine;
+    border: none;
+    border-radius: 10px;
+}
