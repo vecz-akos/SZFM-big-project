@@ -11,7 +11,9 @@ def HomePage(request):
     return render(request, 'auth_system/index.html', {})
 
 def Welcome(request):
-    if "signup" in request.method == 'POST':
+    if request.method != 'POST':
+        return render(request, 'auth_system/welcome.html', {})
+    if "signup" in request.POST:
         first_name = request.POST.get('fname')
         last_name = request.POST.get('lname')
         user_name = request.POST.get('uname')
@@ -25,8 +27,7 @@ def Welcome(request):
         new_user.save()
 
         return redirect('welcome-page')
-
-    if "login" in request.method == "POST":
+    elif "login" in request.POST:
         user_name = request.POST.get('uname')
         password = request.POST.get('passw')
 
