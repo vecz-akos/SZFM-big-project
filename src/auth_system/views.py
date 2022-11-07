@@ -9,6 +9,10 @@ from django.contrib.auth.decorators import login_required
 def HomePage(request):
     return render(request, 'auth_system/index.html', {})
 
+def Welcome(request):
+
+    return render(request, 'auth_system/welcome.html', {})
+
 def Register(request):
     if request.method == 'POST':
         first_name = request.POST.get('fname')
