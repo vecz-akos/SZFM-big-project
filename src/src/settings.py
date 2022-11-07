@@ -128,4 +128,4 @@ import os
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-LOGIN_URL = 'login-page'
+LOGIN_URL = 'welcome-page'
