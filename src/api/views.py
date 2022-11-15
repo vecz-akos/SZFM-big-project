@@ -5,13 +5,22 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
+def get_category_data(filter={}):
+    categories = Category.objects.filter(**filter)
+    serializer = CategorySerializer(categories, many=True)
+    return serializer.data
+
+def get_sample_data(filter={}):
+    samples = Sample.objects.filter(**filter)
+    serializer = SampleSerializer(samples, many=True)
+    return serializer.data
+
 @api_view(["GET", "POST"])
 def get_categories(request):
     if request.method == "GET":
         category_filter = dict(request.GET.items())
-        categories = Category.objects.filter(**category_filter)
-        serializer = CategorySerializer(categories, many=True)
-        return JsonResponse({"categories": serializer.data}, safe=False)
+        data = get_category_data(category_filter)
+        return JsonResponse({"categories": data}, safe=False)
     elif request.method == "POST":
         serializer = CategorySerializer(data=request.data)
         if serializer.is_valid():
@@ -22,9 +31,8 @@ def get_categories(request):
 def get_samples(request):
     if request.method == "GET":
         sample_filter = dict(request.GET.items())
-        samples = Sample.objects.filter(**sample_filter)
-        serializer = SampleSerializer(samples, many=True)
-        return JsonResponse({"samples": serializer.data}, safe=False)
+        data = get_sample_data(sample_filter)
+        return JsonResponse({"samples": data}, safe=False)
     elif request.method == "POST":
         serializer = SampleSerializer(data=request.data)
         if serializer.is_valid():
