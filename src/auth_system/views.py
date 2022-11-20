@@ -4,13 +4,16 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from api.views import get_category_data, get_sample_data
+from api.models import Category
+from unidecode import unidecode
 
 
 @login_required
 def HomePage(request):
-    categs = get_category_data()
+    categs = Category.objects.all()
     samps = get_sample_data()
-    return render(request, 'auth_system/index.html', {"categories": categs, "samples": samps})
+    categs = zip(categs, map(lambda c: unidecode(c.name), categs))
+    return render(request, 'auth_system/index.html', {"categories": categs, "samples": samps, "user": request.user})
 
 def Welcome(request):
     if request.method != 'POST':

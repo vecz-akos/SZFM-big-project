@@ -17,8 +17,8 @@
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">Valami Meno</span>
-                    <span class="profession">Web developer</span>
+                    <span class="name">{{ user.last_name }} {{ user.first_name }}</span>
+                    <span class="profession">{{ user.username }}</span>
                 </div>
             </div>
 
@@ -104,9 +104,9 @@
                 <div class="text">Discover</div>
                 <div class="cards-display">
                     {% if categories %}
-                    {% for category in categories %}
+                    {% for category, cat_ascii in categories %}
                     <div class="card">
-                        <a href="/rate/{{ category.name }}">
+                        <a href="/rate/{{ cat_ascii }}">
                             <img src="{{ category.img }}" alt="">
                             <p class="text1">{{ category.name }}</p>
                             <p class="text2">{{ category.description|truncatewords:3 }}</p>
