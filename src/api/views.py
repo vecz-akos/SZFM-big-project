@@ -47,10 +47,12 @@ def get_rates(request):
         serializer = RateSerializer(rates, many=True)
         return JsonResponse({"rates": serializer.data}, safe=False)
     elif request.method == "POST":
-        serializer = RateSerializer(data=request.data)
+        data = {key: request.data.get(key) for key in ["userId", "sampleId", "rate"]}
+        serializer = RateSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response({}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 @api_view(["GET", "PUT", "DELETE"])
 def get_category_details(request, id):
