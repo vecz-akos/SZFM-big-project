@@ -17,8 +17,8 @@
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">Valami Meno</span>
-                    <span class="profession">Web developer</span>
+                    <span class="name">{{ user.last_name }} {{ user.first_name }}</span>
+                    <span class="profession">{{ user.username }}</span>
                 </div>
             </div>
 
@@ -95,7 +95,6 @@
                 
             </div>
         </div>
-
     </nav>
 
     <section class="home">
@@ -103,105 +102,19 @@
             <div class="main-bar">
                 <div class="text">Discover</div>
                 <div class="cards-display">
-                    {% if categories %}
-                    {% for category in categories %}
+                {% if samples %}
+                    {% for sample in samples %}
                     <div class="card">
-                        <a href="/rate/{{ category.name }}">
-                            <img src="{{ category.img }}" alt="">
-                            <p class="text1">{{ category.name }}</p>
-                            <p class="text2">{{ category.description|truncatewords:3 }}</p>
+                        <a href="/rate/{{ category_name }}/{{ sample.id }}">
+                            <img src="{{ sample.img }}" alt="">
+                            <p class="text1">{{ sample.name }}</p>
+                            <p class="text2">{{ sample.description|truncatewords:8 }}</p>
                         </a>
                     </div>
                     {% endfor %}
-                    {% else %}
-                        <p>Nincsenek témák feltöltve.</p>
-                    {% endif %}
-                </div>
-                <div class="text">Discover</div>
-                <div class="cards-display">
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
-                </div>
-                <div class="text">Discover</div>
-                <div class="cards-display">
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.genius.com/4fbb84b136772b725f30de9a97495af9.1000x563x1.jpg" alt="">
-                        <p class="text1">Same Old Story</p>
-                        <p class="text2">Zene</p>
-                    </div>
+                {% else %}
+                    <p>Nincsenek értékelendő minták a témában.</p>
+                {% endif %}
                 </div>
             </div>
             <div class="myhr"></div>
