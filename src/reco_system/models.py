@@ -14,7 +14,8 @@ class Samples(models.Model):
         return str(self.pk)
 
 class Rating(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, default=None)
     sample = models.ForeignKey(Samples, on_delete=models.CASCADE, default=None)
     rating = '' # HIANYOS
     rated_date = models.DateTimeField(auto_now_add=True)
+    

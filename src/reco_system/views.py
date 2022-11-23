@@ -1,3 +1,5 @@
 from django.shortcuts import render
+from api.models import Samples, Rating
 
-# Create your views here.
+def main_view(request):
+    return render(request, 'rate/rate.html', {})
