@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from api.models import Samples, rate
+from .models import Sample, Rate
 from django.db.models import Case, When
 import pandas as pd
 
@@ -12,14 +12,14 @@ def get_similar(sample_name,rating,corrMatrix):
 
 def recommend(request):
 
-    sample_rating = pd.DataFrame(list(rate.objects.all().values()))
+    sample_rating = pd.DataFrame(list(Rate.objects.all().values()))
 
     new_user = sample_rating.user_id.unique().shape[0]
     current_user_id = request.user.id
 
     if current_user_id > new_user:
-        sample = Samples.objects.get(id)
-        q = rate(user=request.user, sample=sample, rating=0)
+        sample = Sample.objects.get(id)
+        q = Rate(user=request.user, sample=sample, rating=0)
         q.save()
 
 
@@ -27,7 +27,7 @@ def recommend(request):
     userRatings = userRatings.fillna(0,axis=1)
     corrMatrix = userRatings.corr(method='pearson')
 
-    user = pd.DataFrame(list(rate.objects.filter(user=request.user).values())).drop(['user_id','id'],axis=1)
+    user = pd.DataFrame(list(Rate.objects.filter(user=request.user).values())).drop(['user_id','id'],axis=1)
     user_filtered = [tuple(x) for x in user.values]
     sample_id_watched = [each[0] for each in user_filtered]
 
@@ -38,7 +38,7 @@ def recommend(request):
     samples_id = list(similar_sample.sum().sort_values(ascending=False).index)
     samples_id_recommend = [each for each in samples_id if each not in sample_id_watched]
     preserved = Case(*[When(pk=pk, then=pos) for pos, pk in enumerate(samples_id_recommend)])
-    sample_list=list(Samples.objects.filter(id__in = samples_id_recommend).order_by(preserved)[:10])
+    sample_list=list(Sample.objects.filter(id__in = samples_id_recommend).order_by(preserved)[:10])
 
     context = {'sample_list': sample_list}
     return render(request, 'rate/rate.html', context)
