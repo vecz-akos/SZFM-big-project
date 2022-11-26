@@ -103,10 +103,10 @@
         <div class="main-div">
             <div class="main-bar">
                 <div class="rate-card">
-                    <h1 class="text1">{{ sample.name }}</h1>
+                    <h1 class="text1"><a href="/rate/{{ category }}">{{ category }}</a> > {{ sample.name }}</h1>
                     <img src="{{ sample.img }}" alt="">
+                    <p class="text2">Tags: {{ sample.tags }}</p>
                     <p class="text2">{{ sample.description }}</p>
-                    <p class="text2">{{ sample.tags }}</p>
                     {% if rate == -1 %}
                     <form method="post" id="rate-input">
                         {% csrf_token %}

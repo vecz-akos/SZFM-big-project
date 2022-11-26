@@ -30,6 +30,7 @@ def rate_sample(request, category, id):
     current_sample = current_sample[0]
     context = {
         "user": request.user,
+        "category": category,
         "rate": -1,
         "sample": current_sample,
         "user": request.user
@@ -45,6 +46,6 @@ def rate_sample(request, category, id):
     elif request.method == "POST":
         rate = add_rate(sample_id=current_sample["id"], user_id=context["user"].id, rate_num=request.POST["rate"])
         if rate == "ok":
-            context["rate"] = rate_num=request.POST["rate"]
+            context["rate"] = request.POST["rate"]
             return render(request, 'rate/rate.html', context)
     return Response(status=status.HTTP_404_NOT_FOUND)

@@ -18,6 +18,7 @@
     --card-color: #d2d9ee;
 
     /* ====== Transition ====== */
+    --tran-01: all 125ms ease;
     --tran-03: all 0.2s ease;
     --tran-03: all 0.3s ease;
     --tran-04: all 0.3s ease;
@@ -347,10 +348,10 @@ body.dark .home .text{
 }
 
 .cards-display {
-    height: 230px;
+    /* height: 230px; */
     display: flex;
     padding-left: 60px;
-    overflow-x: auto;
+    overflow-x: visible;
     scroll-behavior: smooth;
 }
 
@@ -359,10 +360,12 @@ body.dark .home .text{
     margin-right: 10px;
     border-radius: 15px;
     background-color: var(--card-color);
+    transition: var(--tran-01);
 }
 
 .card:hover {
     transform: scale(1.03);
+    transition: var(--tran-01);
 }
 
 .card img {
@@ -408,6 +411,38 @@ body.dark .home .text{
 
 .right-card .text-top {
     font-size: 15px;
+}
+
+.sample-card {
+    height: fit-content;
+    margin-right: 10px;
+    border-radius: 15px;
+    background-color: var(--card-color);
+    padding: .5rem;
+    transition: var(--tran-01);
+}
+
+.sample-card:hover {
+    transform: scale(1.03);
+    transition: var(--tran-01);
+}
+
+.sample-card img {
+    height: 10rem;
+    width: 10rem;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.sample-card .text1, .sample-card .text2 {
+    width: 10rem;
+    color: var(--text-color);
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+.sample-card .text2 {
+    font-size: 11px;
 }
 
 .rate-card {
