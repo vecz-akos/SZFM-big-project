@@ -104,9 +104,9 @@
                 <div class="text">Categories</div>
                 <div class="cards-display">
                     {% if categories %}
-                    {% for category, cat_ascii in categories %}
+                    {% for category in categories %}
                     <div class="card">
-                        <a href="/rate/{{ cat_ascii }}">
+                        <a href="/rate/{{ category.name }}">
                             <img src="{{ category.img }}" alt="">
                             <p class="text1">{{ category.name }}</p>
                             <p class="text2">{{ category.description|truncatewords:3 }}</p>

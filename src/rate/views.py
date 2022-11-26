@@ -7,19 +7,11 @@ from api.views import get_sample_data, get_sample_data
 from api.models import Sample, Category, Rate
 from api.serializers import RateSerializer
 from django.http import HttpResponse
-from unidecode import unidecode
-
-def get_category_by_ascii_name(name):
-    categories = Category.objects.all()
-    for cat in categories:
-        if unidecode(cat.name) == name:
-            return cat
-    return None
 
 
 @login_required
 def select_sample(request, category):
-    if (current_category := get_category_by_ascii_name(category)):
+    if (current_category := Category.objects.get(name=category)):
         category_id = current_category.id
         samples = get_sample_data({"categoryId": category_id})
         template = loader.get_template("rate/category.html")
