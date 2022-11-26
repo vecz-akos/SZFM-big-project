@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.template import loader
 from rest_framework.response import Response
 from rest_framework import status
-from api.views import get_sample_data, get_sample_data
+from api.views import get_sample_data, get_sample_data, add_rate, is_rate_in_db, get_rate_data
 from api.models import Sample, Category, Rate
 from api.serializers import RateSerializer
 from django.http import HttpResponse
@@ -25,25 +25,26 @@ def select_sample(request, category):
 
 @login_required
 def rate_sample(request, category, id):
+    if not (current_sample := get_sample_data({"id":id})):
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    current_sample = current_sample[0]
     context = {
         "user": request.user,
-        "rated": False
+        "rate": -1,
+        "sample": current_sample,
+        "user": request.user
     }
+
     if request.method == "GET":
-        if (current_sample := get_sample_data({"id":id})):
-            current_sample = current_sample[0]
-            options = [t[0] for t in Rate.rate.field.choices[1:]]
-            context["sample"] = current_sample
-            context["user"] = request.user
-            context["options"] = options
-            if Rate.objects.filter(userId = request.user.id, sampleId = current_sample["id"]): # már értékelte a user
-                context["rated"] = True
-                return render(request, 'rate/rate.html', context)
-            return render(request, 'rate/rate.html', context)
+        options = [t[0] for t in Rate.rate.field.choices[1:]]
+        context["options"] = options
+        rate = get_rate_data(user_id = request.user.id, sample_id = current_sample["id"])
+        if rate.exists(): # már értékelte a user
+            context["rate"] = rate.get().rate
+        return render(request, 'rate/rate.html', context)
     elif request.method == "POST":
-        data = {key: request.POST[key] for key in ["userId", "sampleId", "rate"]}
-        serializer = RateSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        rate = add_rate(sample_id=current_sample["id"], user_id=context["user"].id, rate_num=request.POST["rate"])
+        if rate == "ok":
+            context["rate"] = rate_num=request.POST["rate"]
+            return render(request, 'rate/rate.html', context)
     return Response(status=status.HTTP_404_NOT_FOUND)

@@ -15,6 +15,20 @@ def get_sample_data(filter={}):
     serializer = SampleSerializer(samples, many=True)
     return serializer.data
 
+def add_rate(sample_id, user_id, rate_num):
+    data = {"userId": user_id, "sampleId": sample_id, "rate": rate_num}
+    serializer = RateSerializer(data=data)
+    if serializer.is_valid() and not is_rate_in_db(user_id, sample_id):
+        serializer.save()
+        return "ok"
+    return serializer.errors
+
+def is_rate_in_db(user_id, sample_id):
+    return Rate.objects.filter(**{"userId": user_id, "sampleId": sample_id}).exists()
+
+def get_rate_data(sample_id, user_id):
+    return Rate.objects.filter(**{"userId": user_id, "sampleId": sample_id})
+
 @api_view(["GET", "POST"])
 def get_categories(request):
     if request.method == "GET":
@@ -48,10 +62,10 @@ def get_rates(request):
         return JsonResponse({"rates": serializer.data}, safe=False)
     elif request.method == "POST":
         data = {key: request.data.get(key) for key in ["userId", "sampleId", "rate"]}
-        serializer = RateSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
+        rate = add_rate(**data)
+        if rate == "ok":
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(rate, status=status.HTTP_405_METHOD_NOT_ALLOWED)
     return Response({}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 @api_view(["GET", "PUT", "DELETE"])

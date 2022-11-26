@@ -107,6 +107,7 @@
                     <img src="{{ sample.img }}" alt="">
                     <p class="text2">{{ sample.description }}</p>
                     <p class="text2">{{ sample.tags }}</p>
+                    {% if rate == -1 %}
                     <form method="post" id="rate-input">
                         {% csrf_token %}
                         <div class="input-field">
@@ -121,6 +122,9 @@
                         </div>
                         <button type="submit" class="btn solid">Send!</button>
                     </form>
+                    {% else %}
+                    <p><b>You have already rated the sample. Your rating is {{ rate }}.</b></p>
+                    {% endif %}
                 </div>
             </div>
             <div class="myhr"></div>
