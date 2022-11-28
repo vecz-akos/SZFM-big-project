@@ -4,7 +4,7 @@ from .serializers import CategorySerializer, SampleSerializer, RateSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from random import shuffle
+from random import sample
 from reco_system.views import get_random_sample
 
 def get_category_data(filter={}):
@@ -37,14 +37,13 @@ def get_samples_to_home_page(cat_num=3, samp_num=6):
     kategóriákkal, és soronként különböző mintákkal.
     """
     cats = list(Category.objects.values("id", "name"))
-    shuffle(cats)
     if len(cats) > cat_num:
-        cats = cats[:cat_num]
-    ret_list = []
+        cats = sample(cats, cat_num)
+    ret_dict = {}
     for category in cats:
         samps = get_random_sample(category["id"], samp_num)
-        ret_list.append(samps)
-    return ret_list, [cat["name"] for cat in cats]
+        ret_dict[category["name"]] = samps
+    return ret_dict
 
 @api_view(["GET", "POST"])
 def get_categories(request):
