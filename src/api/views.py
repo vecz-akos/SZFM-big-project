@@ -4,6 +4,8 @@ from .serializers import CategorySerializer, SampleSerializer, RateSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from random import shuffle
+from reco_system.views import get_random_sample
 
 def get_category_data(filter={}):
     categories = Category.objects.filter(**filter)
@@ -28,6 +30,21 @@ def is_rate_in_db(user_id, sample_id):
 
 def get_rate_data(sample_id, user_id):
     return Rate.objects.filter(**{"userId": user_id, "sampleId": sample_id})
+
+def get_samples_to_home_page(cat_num=3, samp_num=6):
+    """
+    Visszatér egy két dimenziós listával, minden sorban különböző
+    kategóriákkal, és soronként különböző mintákkal.
+    """
+    cats = list(Category.objects.values("id", "name"))
+    shuffle(cats)
+    if len(cats) > cat_num:
+        cats = cats[:cat_num]
+    ret_list = []
+    for category in cats:
+        samps = get_random_sample(category["id"], samp_num)
+        ret_list.append(samps)
+    return ret_list, [cat["name"] for cat in cats]
 
 @api_view(["GET", "POST"])
 def get_categories(request):

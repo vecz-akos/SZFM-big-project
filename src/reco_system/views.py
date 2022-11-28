@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import Category, Sample, Rate
+from api.models import Category, Sample, Rate
 from api.serializers import SampleSerializer
 from django.db.models import Case, When
-from random import choice
+from random import choice, shuffle
 import pandas as pd
 
 def get_similar(sample_name,rating,corrMatrix):
@@ -45,9 +45,11 @@ def recommend(request):
     context = {'sample_list': sample_list}
     return render(request, 'rate/rate.html', context)
 
-def get_random_sample(category=""):
-    if not category or not isinstance(category, str):
-        category = choice(Category.objects.all()).name
-    samples = Sample.objects.filter(**filter)
-    serializer = SampleSerializer(samples)
-    # TODO
+def get_random_sample(category="", pc=1):
+    if (not category) or (not isinstance(category, int)):
+        category = choice(Category.objects.all()).id
+    samples = list(Sample.objects.filter(id=category))
+    shuffle(samples)
+    if len(samples) > pc:
+        samples = samples[:pc]
+    return samples
