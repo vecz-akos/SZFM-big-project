@@ -27,6 +27,8 @@ def select_sample(request, category):
 def rate_sample(request, category, id):
     if not (current_sample := get_sample_data({"id":id})):
         return Response(status=status.HTTP_404_NOT_FOUND)
+    if isinstance(category, int):
+        category = Category.objects.filter(id=category).get().name
     current_sample = current_sample[0]
     context = {
         "user": request.user,

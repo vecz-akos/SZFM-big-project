@@ -361,7 +361,8 @@ body.dark .home .text{
 }
 
 .card {
-    height: 210px;
+    height: auto;
+    width: 10rem;
     margin-right: 10px;
     border-radius: 15px;
     background-color: var(--card-color);
@@ -381,8 +382,11 @@ body.dark .home .text{
     border-radius: 15px 15px 0 0;
 }
 
-.card .text1, .card .text2 {
+.text1, .text2 {
     color: var(--text-color);
+}
+
+.card .text1, .card .text2 {
     font-size: 13px;
     margin-left: 5px;
 }
@@ -475,6 +479,11 @@ body.dark .home .text{
     margin-bottom: 2rem;
 }
 
+.rate-card .text1, .rate-card .text2 {
+    font-size: 13px;
+    margin-left: 5px;
+}
+
 .rate-card > img {
     display: block;
     width: 62%;
@@ -542,4 +551,9 @@ body.dark .home .text{
 
 a {
     text-decoration: none;
+    color: #00dbde;
+}
+
+a:hover {
+    color: #fc00ff;
 }
