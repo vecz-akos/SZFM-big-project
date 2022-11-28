@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from api.models import Category, Sample, Rate
-from api.serializers import SampleSerializer
 from django.db.models import Case, When
 import random
 import pandas as pd
@@ -44,6 +43,29 @@ def recommend(request):
 
     context = {'sample_list': sample_list}
     return render(request, 'rate/rate.html', context)
+
+def get_popular(category="", pc=1):
+    """
+    Returns a list with the most popular samples in a category.
+
+    Parameters
+    ----------
+
+    category : id of category
+    pc : number of the top samples
+    """
+    if (not category) or (not isinstance(category, int)):
+        category = random.choice(Category.objects.all()).id
+    rates = Rate.objects.filter(sampleId__categoryId=category).values("sampleId", "rate")
+    try:
+        df = pd.DataFrame(rates).groupby("sampleId").mean()
+        samples = df.groupby("sampleId").mean().sort_values(by="rate", ascending=False).iloc[:pc]
+        top_list = []
+        for index, _ in samples.iterrows():
+            top_list.append(Sample.objects.get(id=index))
+    except:
+        top_list = []
+    return top_list
 
 def get_random_sample(category="", pc=1):
     if (not category) or (not isinstance(category, int)):
