@@ -557,3 +557,9 @@ a {
 a:hover {
     color: #fc00ff;
 }
+
+@media (orientation: portrait) {
+    .right-bar, .myhr {
+      display: none;
+    }
+}
