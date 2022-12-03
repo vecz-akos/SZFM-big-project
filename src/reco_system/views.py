@@ -70,14 +70,14 @@ def get_popular(category="", pc=1):
     if (not category) or (not isinstance(category, int)):
         category = random.choice(Category.objects.all()).id
     rates = Rate.objects.filter(sampleId__categoryId=category).values("sampleId", "rate")
-    try:
-        df = pd.DataFrame(rates).groupby("sampleId").mean()
-        samples = df.groupby("sampleId").mean().sort_values(by="rate", ascending=False).iloc[:pc]
-        top_list = []
+    top_list = []
+    if len(rates) != 0:
+        df = pd.DataFrame(rates)
+        df = df.groupby(by="sampleId").mean()
+        samples = df.groupby("sampleId").mean().sort_values(by="rate", ascending=False)
+        samples = samples.iloc[:pc]
         for index, _ in samples.iterrows():
             top_list.append(Sample.objects.get(id=index))
-    except:
-        top_list = []
     return top_list
 
 def get_random_sample(category="", pc=1):

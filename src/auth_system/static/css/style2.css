@@ -356,7 +356,8 @@ body.dark .home .text{
     /* height: 230px; */
     display: flex;
     padding-left: 60px;
-    overflow: visible;
+    overflow-x: auto;
+    overflow-y: hidden;
     scroll-behavior: smooth;
 }
 

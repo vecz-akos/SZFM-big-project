@@ -4,13 +4,14 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from api.views import get_category_data, get_sample_data
+from reco_system.views import get_popular
 from api.models import Category
 
 
 @login_required
 def HomePage(request):
     categs = Category.objects.all()
-    samps = get_sample_data()
+    samps = get_popular(pc=8)
     return render(request, 'auth_system/index.html', {"categories": categs, "samples": samps, "user": request.user})
 
 def Welcome(request):
