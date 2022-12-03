@@ -7,10 +7,13 @@ import pandas as pd
 def recommend(request):
     context = {
         "user": request.user,
-        "samples": []
+        "samples": set()
         }
     
-    context["samples"] = get_popular(pc=5)
+    recoms = set(get_popular(pc=4))
+    recoms = recoms.union(get_random_sample(pc=3))
+
+    context["samples"] = recoms
 
     return render(request, 'reco/reco.html', context)
 
@@ -82,5 +85,5 @@ def get_random_sample(category="", pc=1):
         category = random.choice(Category.objects.all()).id
     samples = list(Sample.objects.filter(categoryId=category))
     if len(samples) > pc:
-        samples = random.sample(samples)
+        samples = random.sample(samples, k=pc)
     return samples

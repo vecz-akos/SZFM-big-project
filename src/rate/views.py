@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.template import loader
 from rest_framework.response import Response
 from rest_framework import status
-from api.views import get_sample_data, get_sample_data, add_rate, is_rate_in_db, get_rate_data
+from api.views import get_sample_data, get_sample_data, add_rate, get_category_data, get_rate_data
 from api.models import Sample, Category, Rate
 from api.serializers import RateSerializer
 from django.http import HttpResponse
@@ -27,9 +27,8 @@ def select_sample(request, category):
 def rate_sample(request, category, id):
     if not (current_sample := get_sample_data({"id":id})):
         return Response(status=status.HTTP_404_NOT_FOUND)
-    if isinstance(category, int):
-        category = Category.objects.filter(id=category).get().name
     current_sample = current_sample[0]
+    category = get_category_data({"id":current_sample["categoryId"]})[0].get("name")
     context = {
         "user": request.user,
         "category": category,
