@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 
     'auth_system',
     'api',
-    'rate'
+    'rate',
+    'reco_system'
 ]
 
 MIDDLEWARE = [

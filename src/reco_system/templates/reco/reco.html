@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="{% static 'imgs/movie.ico' %}">
+    <title>Category - {{ category_name }}</title>
+</head>
+<body class="dark">
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="https://i.pinimg.com/originals/d9/56/9b/d9569bbed4393e2ceb1af7ba64fdf86a.jpg" alt="profile-picture">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">{{ user.last_name }} {{ user.first_name }}</span>
+                    <span class="profession">{{ user.username }}</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Keresés...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="/home">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Kezdőlap</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bar-chart-alt icon' ></i>
+                            <span class="text nav-text">Népszerű</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-heart icon' ></i>
+                            <span class="text nav-text">Ajánlott</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-star icon' ></i>
+                            <span class="text nav-text">Kedvencek</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bell icon' ></i>
+                            <span class="text nav-text">Beállítások</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="{% url 'logout' %}">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Kijelentkezés</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <div class="main-div">
+            <div class="main-bar">
+                <div class="text">{{ category_name }}</div>
+                <div class="cards-display">
+                {% if samples %}
+                    {% for sample in samples %}
+                    <div class="card">
+                        <a href="/rate/sample/{{ sample.id }}">
+                            <img src="{{ sample.img }}" alt="">
+                            <p class="text1">{{ sample.name }}</p>
+                            <p class="text2">{{ sample.description|truncatewords:8 }}</p>
+                        </a>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="text2">Please, rate some sample for recommendation.</p>
+                {% endif %}
+                </div>
+            </div>
+            <div class="myhr"></div>
+            <div class="right-bar">
+                <div class="popular-text">Népszerűek:</div>
+                <div class="right-cards">
+                    <div class="right-cards">
+                        {% if samples %}
+                            {% for sample in samples %}
+                            <div class="right-card">
+                                <img src="{{ sample.img }}" alt="">
+                                <div>
+                                    <p class="text-top">{{ sample.name }}</p>
+                                    <p class="text-bottom">{{ sample.tags|truncatewords:8 }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            <p>Nincsenek értékelendő minták a témában.</p>
+                        {% endif %}
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    {% load static %}
+    <script src="{% static 'script/script.js' %}"></script>
+
+</body>
+</html>

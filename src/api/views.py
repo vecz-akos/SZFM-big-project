@@ -31,6 +31,12 @@ def is_rate_in_db(user_id, sample_id):
 def get_rate_data(sample_id, user_id):
     return Rate.objects.filter(**{"userId": user_id, "sampleId": sample_id})
 
+def get_category_by_rate(rate_id):
+    rate = Rate.objects.get(id=rate_id)
+    sample = Sample.objects.get(id=rate.sampleId)
+    category = Category.objects.get(id=sample.categoryId)
+    return category
+
 def get_samples_to_home_page(cat_num=3, samp_num=6):
     """
     Visszatér egy két dimenziós listával, minden sorban különböző

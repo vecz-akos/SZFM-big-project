@@ -4,6 +4,16 @@ from django.db.models import Case, When
 import random
 import pandas as pd
 
+def recommend(request):
+    context = {
+        "user": request.user,
+        "samples": []
+        }
+    
+    context["samples"] = get_popular(pc=5)
+
+    return render(request, 'reco/reco.html', context)
+
 def get_similar(sample_name,rating,corrMatrix):
     similar_ratings = corrMatrix[sample_name]*(rating-2.5)
     similar_ratings = similar_ratings.sort_values(ascending=False)
@@ -11,7 +21,7 @@ def get_similar(sample_name,rating,corrMatrix):
     return similar_ratings
 
 
-def recommend(request):
+def recommend_by_corr(request):
 
     sample_rating = pd.DataFrame(list(Rate.objects.all().values()))
 
