@@ -121,23 +121,22 @@
             </div>
             <div class="myhr"></div>
             <div class="right-bar">
-                <div class="popular-text">Popular:</div>
+                <div class="popular-text">Popular in {{ category_name }}:</div>
                 <div class="right-cards">
-                    <div class="right-cards">
-                        {% if samples %}
-                            {% for sample in samples %}
-                            <div class="right-card">
-                                <img src="{{ sample.img }}" alt="">
-                                <div>
-                                    <p class="text-top">{{ sample.name }}</p>
-                                    <p class="text-bottom">{{ sample.tags|truncatewords:8 }}</p>
-                                </div>
+                    {% if samples %}
+                        {% for sample in samples %}
+                        <div class="right-card">
+                            <img src="{{ sample.img }}" alt="">
+                            <div>
+                                <p class="text-top">{{ sample.name }}</p>
+                                <p class="text-bottom">{{ sample.tags|truncatewords:8 }}</p>
                             </div>
-                            {% endfor %}
-                        {% else %}
-                            <p>There are no samples to evaluate in this topic.</p>
-                        {% endif %}
-                    </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>There are no samples to evaluate in this topic.</p>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </section>
