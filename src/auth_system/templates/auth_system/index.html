@@ -120,38 +120,20 @@
                         <p>There are no samples to evaluate in this topic.</p>
                     {% endif %}
                 </div>
-                <div class="text">Songs</div>
+                {% for x, z in ret_dict.items %}
+                <div class="text">{{ x }}</div>
                 <div class="cards-display">
-                    {% if samples %}
-                        {% for sample in samples %}
+                        {% for y in z%}
                         <div class="card">
-                        <a href="/rate/{{ sample.id }}/{{ sample.id }}">
-                            <img src="{{ sample.img }}" alt="">
-                                <p class="text1">{{ sample.name }}</p>
-                                <p class="text2">{{ sample.tags|truncatewords:8 }}</p>
+                        <a href="/rate/{{ y.id }}/{{ y.id }}">
+                            <img src="{{ y.img }}" alt="">
+                                <p class="text1">{{ y.name }}</p>
+                                <p class="text2">{{ y.tags|truncatewords:8 }}</p>
                             </a>
                         </div>
                         {% endfor %}
-                    {% else %}
-                        <p>There are no samples to evaluate in this topic.</p>
-                    {% endif %}
                 </div>
-                <div class="text">Movies</div>
-                <div class="cards-display">
-                    {% if samples %}
-                        {% for sample in samples %}
-                        <div class="card">
-                        <a href="/rate/{{ category_name }}/{{ sample.id }}">
-                            <img src="{{ sample.img }}" alt="">
-                                <p class="text1">{{ sample.name }}</p>
-                                <p class="text2">{{ sample.tags|truncatewords:8 }}</p>
-                            </a>
-                        </div>
-                        {% endfor %}
-                    {% else %}
-                        <p>There are no samples to evaluate in this topic.</p>
-                    {% endif %}
-                </div>
+                {% endfor %}
             </div>
             <div class="myhr"></div>
             <div id="right" style="display:show" class="right-bar">
