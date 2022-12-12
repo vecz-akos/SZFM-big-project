@@ -1,11 +1,4 @@
-{% extends "base.html" %}
-
-{% block title %}Home{% endblock %}
-
-{% block name_of_user %}{{ user.last_name }} {{ user.first_name }}{% endblock %}
-{% block username %}{{ user.username }}{% endblock %}
-
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/style2.css' %}">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="{% static 'imgs/movie.ico' %}">
-    <title>Home</title>
+    <title>{% block title %}Recommendation system{% endblock %}</title>
 </head>
 <body class="dark">
     <nav class="sidebar close">
@@ -26,8 +19,8 @@
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">{{ user.last_name }} {{ user.first_name }}</span>
-                    <span class="profession">{{ user.username }}</span>
+                    <span class="name">{% block name_of_user %}{% endblock %}</span>
+                    <span class="profession">{% block username %}{% endblock %}</span>
                 </div>
             </div>
 
@@ -95,65 +88,15 @@
     </nav>
 
     <section class="home">
-        <div class="main-div"> -->
+        <div class="main-div">
             {% block content %}
-            <div class="main-bar">
-                <div class="text">Categories</div>
-                <div class="cards-display">
-                    {% if categories %}
-                    {% for category in categories %}
-                    <div class="card">
-                        <a href="/rate/{{ category.name }}">
-                            <img src="{{ category.img }}" alt="">
-                            <p class="text1">{{ category.name }}</p>
-                            <p class="text2">{{ category.description|truncatewords:3 }}</p>
-                        </a>
-                    </div>
-                    {% endfor %}
-                    {% else %}
-                        <p>There are no samples to evaluate in this topic.</p>
-                    {% endif %}
-                </div>
-                {% for x, z in ret_dict.items %}
-                <div class="text">{{ x }}</div>
-                <div class="cards-display">
-                        {% for y in z%}
-                        <div class="card">
-                        <a href="/rate/{{ y.id }}/{{ y.id }}">
-                            <img src="{{ y.img }}" alt="">
-                                <p class="text1">{{ y.name }}</p>
-                                <p class="text2">{{ y.tags|truncatewords:8 }}</p>
-                            </a>
-                        </div>
-                        {% endfor %}
-                </div>
-                {% endfor %}
-            </div>
-            <div class="myhr"></div>
-            <div id="right" style="display:show" class="right-bar">
-                <div class="popular-text">Popular:</div>
-                <div class="right-cards">
-                    {% if samples %}
-                        {% for sample in samples %}
-                        <div class="right-card">
-                            <img src="{{ sample.img }}" alt="">
-                            <div>
-                                <p class="text-top">{{ sample.name }}</p>
-                                <p class="text-bottom">{{ sample.tags|truncatewords:8 }}</p>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    {% else %}
-                        <p>There are no samples to evaluate in this topic.</p>
-                    {% endif %}
-                </div>
-            </div>
+            <p>Item not found.</p>
             {% endblock %}
-        <!-- </div>
+        </div>
     </section>
 
     {% load static %}
     <script src="{% static 'script/script.js' %}"></script>
 
 </body>
-</html> -->
+</html>
