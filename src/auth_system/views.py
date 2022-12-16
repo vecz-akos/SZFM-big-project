@@ -18,8 +18,11 @@ def HomePage(request):
     return render(request, 'auth_system/index.html', {"categories": categs, "samples": samps, "user": request.user, "ret_dict": ret_dict, "samples":samples})
 
 def Welcome(request):
+    context = {
+        "error_msg": ""
+    }
     if request.method != 'POST':
-        return render(request, 'auth_system/welcome.html', {})
+        return render(request, 'auth_system/welcome.html', context)
     if "signup" in request.POST:
         first_name = request.POST.get('fname')
         last_name = request.POST.get('lname')
@@ -43,9 +46,9 @@ def Welcome(request):
             login(request, user)
             return redirect('home-page')
         else:
-            messages.info(request, 'Wrong Username or password')
+            context["error_msg"] = "Bad username or password!"
 
-    return render(request, 'auth_system/welcome.html', {})
+    return render(request, 'auth_system/welcome.html', context)
 
 def logoutUser(request):
     logout(request)

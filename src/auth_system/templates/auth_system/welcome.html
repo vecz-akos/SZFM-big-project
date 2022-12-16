@@ -16,6 +16,9 @@
                 <form action='' method='POST' class="sign-in-form">
                     {% csrf_token %}
                     <h2 class="title">Sign in</h2>
+                    {% if error_msg %}
+                        <p class="error">{{ error_msg }}</p>
+                    {% endif %}
                     <div class="input-field">
                         <i class="fas fa-user"></i>
                         <input type="text" placeholder="Username" name="uname" />
