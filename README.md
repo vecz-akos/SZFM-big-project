@@ -16,7 +16,7 @@ __Start:__
  $ python -m venv venv
  $ source venv/bin/activate
  $ pip install -r requirements.txt
- $ cd ./SZFM-big-project/src
+ $ cd ./src
  $ python manage.py migrate
  $ python manage.py makemigrations
  $ python manage.py createsuperuser
