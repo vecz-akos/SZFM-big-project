@@ -14,7 +14,11 @@ def HomePage(request):
     categs = Category.objects.all()
     samps = get_popular(pc=8)
     ret_dict = get_samples_to_home_page()
-    samples = random.sample(get_sample_data(), 6)
+    samples = get_sample_data()
+    if len(samples) > 6:
+        samples = random.sample(get_sample_data(), 6)
+    else:
+        samples = []
     return render(request, 'auth_system/index.html', {"categories": categs, "samples": samps, "user": request.user, "ret_dict": ret_dict, "samples":samples})
 
 def Welcome(request):
